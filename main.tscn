@@ -1,0 +1,168 @@
+[gd_scene load_steps=5 format=3 uid="uid://de8x63uy1fnwx"]
+
+[ext_resource type="Script" uid="uid://b7nmtm6gflh55" path="res://Main.gd" id="1_ig7tw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0xm2m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
+albedo_color = Color(0.256314, 0.241144, 0.193226, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_ig7tw")
+
+[node name="Jogador" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.113697, 0.786303, -6.4758)
+mesh = SubResource("SphereMesh_0xm2m")
+
+[node name="Camera3D" type="Camera3D" parent="Jogador"]
+transform = Transform3D(-1, 5.34518e-15, -8.74228e-08, -6.68922e-08, 0.643843, 0.765157, 5.62866e-08, 0.765157, -0.643843, 0, 3.5, -1.5)
+doppler_tracking = 1
+current = true
+fov = 91.6
+size = 2.61
+near = 0.065
+far = 6.33
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+layers = 1023
+light_energy = 6.818
+light_indirect_energy = 7.141
+light_volumetric_fog_energy = 10.051
+light_angular_distance = 15.46
+light_specular = 0.0
+
+[node name="Tabuleiro" type="CSGBox3D" parent="."]
+transform = Transform3D(0.998567, 0, 0.0535211, 0, 1, 0, -0.0535211, 0, 0.998567, 0.251955, 0.00682282, -0.506726)
+layers = 15
+gi_lightmap_texel_scale = 10.0
+size = Vector3(5, 0.1, 15)
+material = SubResource("StandardMaterial3D_ig7tw")
+
+[node name="casa01" type="CSGBox3D" parent="Tabuleiro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.9927)
+layers = 1023
+size = Vector3(1, 0.5, 1)
+
+[node name="casa02" type="CSGBox3D" parent="Tabuleiro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.5923)
+layers = 1023
+size = Vector3(1, 0.5, 1)
+
+[node name="casa03" type="CSGBox3D" parent="Tabuleiro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.23579)
+size = Vector3(1, 0.5, 1)
+
+[node name="casa04" type="CSGBox3D" parent="Tabuleiro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.00882)
+size = Vector3(1, 0.5, 1)
+
+[node name="casa05" type="CSGBox3D" parent="Tabuleiro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.791615)
+size = Vector3(1, 0.5, 1)
+
+[node name="casa06" type="CSGBox3D" parent="Tabuleiro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.421275)
+size = Vector3(1, 0.5, 1)
+
+[node name="casa07" type="CSGBox3D" parent="Tabuleiro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56862)
+size = Vector3(1, 0.5, 1)
+
+[node name="casa08" type="CSGBox3D" parent="Tabuleiro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.72655)
+size = Vector3(1, 0.5, 1)
+
+[node name="casa09" type="CSGBox3D" parent="Tabuleiro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.90176)
+size = Vector3(1, 0.5, 1)
+
+[node name="casa10" type="CSGBox3D" parent="Tabuleiro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.13251)
+size = Vector3(1, 0.5, 1)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 183.0
+offset_right = 208.0
+offset_bottom = 212.0
+theme_override_font_sizes/font_size = 33
+
+[node name="Button1" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 71.0
+offset_right = 77.0
+offset_bottom = 173.0
+
+[node name="Button2" type="Button" parent="Control"]
+offset_left = 85.0
+offset_top = 71.0
+offset_right = 140.0
+offset_bottom = 173.0
+
+[node name="Button3" type="Button" parent="Control"]
+offset_left = 148.0
+offset_top = 70.0
+offset_right = 207.0
+offset_bottom = 173.0
+
+[node name="ContadorCasas" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 7.0
+offset_right = 200.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 36
+text = "Casa: 0/10"
+vertical_alignment = 2
+
+[node name="PainelGameOver" type="Panel" parent="Control"]
+layout_direction = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1113.0
+offset_bottom = 618.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ig7tw")
+
+[node name="LabelGameOver" type="Label" parent="Control/PainelGameOver"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 382.0
+offset_top = 207.0
+offset_right = -399.0
+offset_bottom = -363.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER"
+
+[node name="BotaoReiniciar" type="Button" parent="Control/PainelGameOver"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 295.0
+offset_top = -289.0
+offset_right = -292.0
+offset_bottom = -235.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 33
+text = "Reiniciar Jogo"
